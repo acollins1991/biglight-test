@@ -1,0 +1,16 @@
+$containerWidth: 1024px;
+%container-margin-padding {
+  padding: 0 16px;
+  margin: auto;
+}
+
+.container {
+  width: $containerWidth;
+  max-width: 100%;
+  @extend %container-margin-padding;
+}
+
+.container-full {
+  width: 100%;
+  @extend %container-margin-padding;
+}
