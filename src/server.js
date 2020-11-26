@@ -37,7 +37,6 @@ app.get( '/portfolio', async (req, res) => {
   const headline = await portfolioContent.getHeadline();
   const subHeadline = await portfolioContent.getSubHeadline();
   const portfolioItems = await portfolioContent.getPorfolioItems();
-  // console.log(portfolioItems)
 
   res.render('pages/portfolio', { content: {
     banner: {

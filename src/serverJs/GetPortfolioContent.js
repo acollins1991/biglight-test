@@ -2,7 +2,7 @@ const GoogleSheet = require('./GoogleSheet')
 
 module.exports = class GetPortfolioContent extends GoogleSheet {
     constructor() {
-        super(565653012, 'A1:F6')
+        super(565653012, 'A1:F20')
     }
 
     async getHeadline() {
@@ -20,8 +20,9 @@ module.exports = class GetPortfolioContent extends GoogleSheet {
                 return true
             } 
             return false
-        } ).map( row => {
+        } ).map( (row, index) => {
             return {
+                align: (index + 1) % 2 === 1 ? 'right' : 'left',
                 image: {
                     mobile: row['image.mobileUrl'],
                     desktop: row['image.desktopUrl'],

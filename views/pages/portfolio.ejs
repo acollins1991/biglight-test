@@ -6,13 +6,20 @@
 
 <!-- STOP INCLUDES FORMATTING NEXT TO EACH OTHER-->
 
-<% content.portfolioItems.forEach(function(item){ console.log(item) %>
+<% content.portfolioItems.forEach(function(item){ %>
 <section class="container">
-  <img
-    src="<%- item.image.mobile %>"
-    srcset="<%- item.image.desktop %> 501w"
-    alt="<%- item.image.description %>"
-  />
+  <div class="portfolio-item portfolio-item--<%- item.align %>">
+    <img
+      class="portfolio-item__image"
+      src="<%- item.image.mobile %>"
+      srcset="<%- item.image.desktop %> 501w"
+      alt="<%= item.image.description %>"
+    />
+    <div class="portfolio-item__content">
+      <h2><%- item.image.description %></h2>
+      <p><%= item.image.description %></p>
+    </div>
+  </div>
 </section>
 <% }); %>
 
