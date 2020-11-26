@@ -1,14 +1,21 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'app.css'
     }),
     new CleanWebpackPlugin(),
   ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
   entry: './src/client.js',
   output: {
     filename: 'app.js',
