@@ -1,0 +1,23 @@
+<%- include('../partials/header'); -%>
+
+<!-- STOP INCLUDES FORMATTING NEXT TO EACH OTHER-->
+
+<%- include('../partials/banner'), { content }; -%>
+
+<!-- STOP INCLUDES FORMATTING NEXT TO EACH OTHER-->
+
+<% content.sections.forEach(function(item){ console.log(item); %>
+<section class="container">
+  <img
+    src="<%- item.section.mobile %>"
+    srcset="<%- item.section.desktop %> 501w"
+    alt="<%= item.section.description %>"
+  />
+  <h2><%- item.section.description %></h2>
+  <p><%= item.section.description %></p>
+</section>
+<% }); %>
+
+<!-- STOP INCLUDES FORMATTING NEXT TO EACH OTHER -->
+
+<%- include('../partials/footer'); -%>

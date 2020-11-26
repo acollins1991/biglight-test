@@ -2,6 +2,7 @@ const express = require('express');
 const ejs = require('ejs');
 const GetHompageContent = require('./serverJs/GetHompageContent');
 const GetPortfolioContent = require('./serverJs/GetPortfolioContent');
+const GetAboutContent = require('./serverJs/GetAboutContent');
 
 const app = express();
 const port = 3000;
@@ -47,6 +48,23 @@ app.get( '/portfolio', async (req, res) => {
   } })
 
 } );
+
+app.get('/about', async (req, res) => {
+
+  const aboutContent = await new GetAboutContent().init();
+  const headline = await aboutContent.getHeadline();
+  const subHeadline = await aboutContent.getSubHeadline();
+  const sections = await aboutContent.getSections();
+
+  res.render('pages/about', { content: {
+    banner: {
+      headline: headline,
+      subHeadline: subHeadline
+    },
+    sections
+  } });
+
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
