@@ -6,11 +6,11 @@
 
 <!-- STOP INCLUDES FORMATTING NEXT TO EACH OTHER-->
 
-<% content.sections.forEach(function(item){ console.log(item); %>
+<% content.sections.forEach(function(item){ %>
 <section class="container">
   <img
-    src="<%- item.section.mobile %>"
-    srcset="<%- item.section.desktop %> 501w"
+    src="<%- item.section.desktop %>"
+    srcset="<%- item.section.mobile %> 570w, <%- item.section.desktop %> 640w"
     alt="<%= item.section.description %>"
   />
   <h2><%- item.section.description %></h2>
