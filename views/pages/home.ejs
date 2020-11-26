@@ -1,9 +1,20 @@
 <%- include('../partials/header'); -%>
 
-<div class="banner container">
+<section class="banner container">
   <h1><%= content.banner.headline %></h1>
-  <p>I am a professional photographer.</p>
-  <p>Check out my portfolio and feel free to get in touch!</p>
-</div>
+  <p><%- content.banner.subHeadline %></p>
+</section>
+
+<section class="container">
+  <img
+    src="<%- content.image.mobile %>"
+    srcset="<%- content.image.desktop %> 501w"
+  />
+</section>
+
+<section class="container link-section">
+  <a href="/portfolio" class="btn">Check out my portfolio</a>
+  <a href="/about" class="btn">Read more about me</a>
+</section>
 
 <%- include('../partials/footer'); -%>
