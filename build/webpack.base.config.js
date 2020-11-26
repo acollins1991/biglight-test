@@ -11,6 +11,7 @@ module.exports = {
   ],
   entry: './src/client.js',
   output: {
+    filename: 'app.js',
     path: path.join( __dirname, '../public' )
   },
   module: {

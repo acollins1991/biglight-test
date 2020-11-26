@@ -22,7 +22,6 @@ module.exports = class GetPortfolioContent extends GoogleSheet {
             return false
         } ).map( (row, index) => {
             return {
-                align: (index + 1) % 2 === 1 ? 'right' : 'left',
                 image: {
                     mobile: row['image.mobileUrl'],
                     desktop: row['image.desktopUrl'],
