@@ -30,6 +30,7 @@ Performance scores are 97-100/100. Biggest markdown relates to the connection wi
 - Responsive behaviour, but not necessary given the design other than srcset
 - Reorganise the project structure to follow the MVC pattern
 - Create multiple webpack configs for base, dev, and production 
+- A test suite using Jest, chai and JSDOM
 
 # Gatsby and WordPress
 Gatsby is a high-level framework built on top of React, providing utilities to speed up development of advanced and high-performance web apps using static generation. The static architecture benefits from better server response time as the assets are pre-built, improved security as there is no attached backend, and fewer points of failure because the site simply serves static content and does not need to build anything when the server received a request.
