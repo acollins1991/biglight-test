@@ -1,5 +1,5 @@
 .navbar {
-  background: #444444;
+  background: $darkGrey;
   padding: 16px 0;
   &__menu-wrapper {
     list-style: none;
@@ -10,7 +10,12 @@
   &__menu-item {
     margin-right: 12px;
     a {
-      color: white;
+      color: $gold;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: $lightGold;
+      }
     }
   }
 }
