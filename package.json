@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node ./src/server.js",
-    "build": "webpack --watch --config=./build/webpack.base.config.js"
+    "serve:dev": "NODE_ENV=development node ./src/server.js",
+    "serve:prod": "npm run build && node ./src/server.js",
+    "build": "webpack --config=./build/webpack.base.config.js"
   },
   "author": "",
   "license": "ISC",

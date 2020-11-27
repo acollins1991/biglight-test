@@ -12,9 +12,11 @@ const compiler = webpack(config);
 const port = 3000;
 
 app.set('view engine', 'ejs');
-app.use(
-  webpackDevMiddleware(compiler)
-);
+if ( process.env.NODE_ENV === 'development' ) {
+  app.use(
+    webpackDevMiddleware(compiler)
+  );
+}
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
