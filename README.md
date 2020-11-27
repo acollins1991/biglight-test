@@ -9,7 +9,7 @@ To run this repo:
 
 ## Approach
 ### Client side
-I have taken a 'bare bones' approach in building the client-side assets, only using [modern-normalize](https://github.com/sindresorhus/modern-normalize) and custom CSS to keep the client-side assets as small as possible.
+I have taken a 'bare bones' approach in building the client-side assets, only using [modern-normalize](https://github.com/sindresorhus/modern-normalize) and custom CSS to keep the client-side assets as small as possible. I've used BEM syntax to build the CSS for the frontend components.
 
 The CSS and JS are bundled using Webpack for optimisations, although this is just to show usage of a bundler as the JS only includes the lazy load functionality.
 
@@ -22,10 +22,10 @@ Performance scores are 97-100/100. Biggest markdown relates to the connection wi
 ## Improvements
 - The connection with the Google Spreadsheet is quite slow. I started out using cell targeting to get content, but using rows might have been more efficient
 - 'loadInfo' to setup the spreadsheet connection could be shared via some form of singleton class pattern so that it's only done on the first page
-- Investigate a single-page app implementation (barba.js e.g.) for better user experience (page transitions e.g.)
+- Single-page app implementation (barba.js e.g.) for better user experience (page transitions e.g.)
 - Code splitting with Webpack was the original intention but wasn't necessary given the small amount of JS involved
-- Use ES modules to only import the lazy loading JS when necessary
-- A static generator approach would help resolve the spreadsheet connection speed problem, favoured method for this would have been a mixture of Webpack and Gulp
+- Use ES modules to only import the JS when necessary
+- A static generator approach would help resolve the spreadsheet connection speed problem, favoured method for this would be a mixture of Webpack and Gulp
 - Not flagged by Google Lighthouse but inlining critical CSS to avoid render blocking
 - Responsive behaviour, but not necessary given the design other than srcset
 
