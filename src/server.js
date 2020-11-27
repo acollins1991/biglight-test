@@ -1,16 +1,22 @@
 const express = require('express');
 const ejs = require('ejs');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 const GetHompageContent = require('./serverJs/GetHompageContent');
 const GetPortfolioContent = require('./serverJs/GetPortfolioContent');
 const GetAboutContent = require('./serverJs/GetAboutContent');
 
 const app = express();
+const config = require('../build/webpack.base.config');
+const compiler = webpack(config);
 const port = 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.use(
+  webpackDevMiddleware(compiler)
+);
+app.use(express.static('public'));
 
-// homepage
 app.get('/', async (req, res) => {
 
   const homepageContent = await new GetHompageContent().init();
@@ -20,6 +26,7 @@ app.get('/', async (req, res) => {
   const mobileImage = await homepageContent.getMobileImage();
 
   res.render('pages/home', { content: {
+    metaTitle : 'Homepage',
     banner: {
       headline: headline,
       subHeadline: subHeadline
@@ -40,6 +47,7 @@ app.get( '/portfolio', async (req, res) => {
   const portfolioItems = await portfolioContent.getPorfolioItems();
 
   res.render('pages/portfolio', { content: {
+    metaTitle : 'Portfolio',
     banner: {
       headline: headline,
       subHeadline: subHeadline
@@ -57,6 +65,7 @@ app.get('/about', async (req, res) => {
   const sections = await aboutContent.getSections();
 
   res.render('pages/about', { content: {
+    metaTitle : 'About',
     banner: {
       headline: headline,
       subHeadline: subHeadline
