@@ -27,6 +27,7 @@ Performance scores are 97-100/100. Biggest markdown relates to the connection wi
 - Use ES modules to only import the lazy loading JS when necessary
 - A static generator approach would help resolve the spreadsheet connection speed problem, favoured method for this would have been a mixture of Webpack and Gulp
 - Not flagged by Google Lighthouse but inlining critical CSS to avoid render blocking
+- Responsive behaviour, but not necessary given the design other than srcset
 
 # Gatsby and WordPress
 Gatsby is a high-level framework built on top of React, providing utilities to speed up development of advanced and high-performance web apps using static generation. The static architecture benefits from better server response time as the assets are pre-built, improved security as there is no attached backend, and fewer points of failure because the site simply serves static content and does not need to build anything when the server received a request.
