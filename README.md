@@ -19,7 +19,7 @@ The backend uses the EJS templating engine to manage page data, templates and pa
 ## Lighthouse scores
 Performance scores are 97-100/100. Biggest markdown relates to the connection with the Google Spreadsheet.
 
-## Possible improvements
+## Improvements
 - The connection with the Google Spreadsheet is quite slow. I started out using cell targeting to get content, but using rows might have been more efficient
 - 'loadInfo' to setup the spreadsheet connection could be shared via some form of singleton class pattern so that it's only done on the first page
 - Investigate a single-page app implementation (barba.js e.g.) for better user experience (page transitions e.g.)
