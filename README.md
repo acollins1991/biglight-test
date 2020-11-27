@@ -36,4 +36,4 @@ The WordPress REST API exposes the stored content via endpoints, which could be 
 
 ## PRPL
 
-PRPL stands for; Push, Render, Pre-cache, Lazy Load. This described a web app architecture designed to improve web app performance, and is a core principal behind how Gatsby works.
+PRPL stands for; Push, Render, Pre-cache, Lazy Load. This described a web app architecture designed Google to improve web app performance, and is a core principal behind how Gatsby works. The main objective of this architecture is to load the critical client assets as early as possible, render the initial route, and lazy load the remaining assets for the initial route and other routes.
