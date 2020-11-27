@@ -33,7 +33,7 @@ Performance scores are 97-100/100. Biggest markdown relates to the connection wi
 - A test suite using Jest, chai and JSDOM
 - Upload a favicon to stop 404 error following browser automatic request
 - Use PostCSS to purge unused CSS classes
-- In a live project a CDN would speed up asset serving. A potential static setup would b AWS S3 and Cloudfront.
+- In a live project a CDN would speed up asset serving. A potential static setup would be AWS S3 and Cloudfront.
 
 # Gatsby and WordPress
 Gatsby is a high-level framework built on top of React, providing utilities to speed up development of advanced and high-performance web apps using static generation. The static architecture benefits from better server response time as the assets are pre-built, improved security as there is no attached backend, and fewer points of failure because the site simply serves static content and does not need to build anything when the server received a request.
